@@ -633,6 +633,7 @@ Score SearchHandler::run_aspiration_window_search(int depth, Score previous_scor
         }
 
         if (previous_score <= alpha) {
+            beta = (alpha + beta) / 2;
             alpha = previous_score - window;
         } else if (previous_score >= beta) {
             beta = previous_score + window;
